@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include "forca-biblioteca.h"
 
 void abertura(){
     printf("*************************\n");
@@ -13,7 +14,6 @@ int main(){
     int jogada = 0;
     char palavraSecreta[30];
     char chutes[26];
-    char letra;
 
     sprintf(palavraSecreta, "PARALELEPIPEDO");
 
@@ -38,14 +38,24 @@ int main(){
             }
         }
 
+            printf("\n");
+            printf("\n");
+
+            printf("Letras chutadas: ");
+
+            for(int i = 0; i < jogada; i++){
+                printf(" %c ", chutes[i]);
+            }
 
             printf("\n");
             printf("\n");
+
+            char letra;
             printf("Digite uma letra: ");
             scanf(" %c", &letra);
             chutes[jogada] = letra;
             jogada++;
-            system("cls");
+            system("cls"); //esta função nao é portavel, apenas windows
 
  }while(teste == 1);
 
