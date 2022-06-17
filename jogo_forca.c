@@ -17,7 +17,9 @@ void letras_chutadas(char *chutes, int *jogada){
     printf("Letras chutadas: ");
 
     for(int i = 0; i < *jogada; i++){
+
     printf(" %c ", chutes[i]);
+
     }
 
     printf("\n");
@@ -30,6 +32,8 @@ int main(){
     int jogada = 0;
     char palavraSecreta[30];
     char chutes[26];
+    int acertos = 0;
+    int erros = 0;
 
     sprintf(palavraSecreta, "PARALELEPIPEDO");
 
@@ -62,6 +66,20 @@ int main(){
             chutes[jogada] = letra;
             jogada++;
             system("cls"); //esta função nao é portavel, apenas windows
+
+            for(int i = 0; i < strlen(palavraSecreta); i++){
+
+                for(int j = 0; j < jogada; j++){
+                    if(chutes[j] == palavraSecreta[i]){
+                    acertos++;
+                    break;
+                    }
+
+
+
+            printf("TESTE ACERTOS = %d", acertos);
+            printf("TESTE ERROS = %d", erros);
+
 
  }while(teste == 1);
 
