@@ -3,9 +3,25 @@
 #include "forca-biblioteca.h"
 
 void abertura(){
+
     printf("*************************\n");
     printf("====> JOGO DA FORCA <====\n");
     printf("*************************\n\n");
+}
+
+void letras_chutadas(char *chutes, int *jogada){
+
+    printf("\n");
+    printf("\n");
+
+    printf("Letras chutadas: ");
+
+    for(int i = 0; i < *jogada; i++){
+    printf(" %c ", chutes[i]);
+    }
+
+    printf("\n");
+    printf("\n");
 }
 
 int main(){
@@ -38,17 +54,7 @@ int main(){
             }
         }
 
-            printf("\n");
-            printf("\n");
-
-            printf("Letras chutadas: ");
-
-            for(int i = 0; i < jogada; i++){
-                printf(" %c ", chutes[i]);
-            }
-
-            printf("\n");
-            printf("\n");
+    letras_chutadas(&chutes, &jogada);
 
             char letra;
             printf("Digite uma letra: ");
